@@ -1,6 +1,7 @@
 /* Local previews never send production analytics. No form content is sent to Analytics. */
 (() => {
  'use strict';
+ if(document.documentElement.dataset.languageRedirect === 'true') return;
  const config=window.INANLAR_SETTINGS;
  if(!config || !config.productionHosts.includes(location.hostname) || !/^G-[A-Z0-9]+$/.test(config.ga4MeasurementId)) return;
  window.dataLayer=window.dataLayer||[];

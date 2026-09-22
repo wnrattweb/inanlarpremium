@@ -1,5 +1,6 @@
 (() => {
  'use strict';
+ if(document.documentElement.dataset.languageRedirect === 'true') return;
  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
  const words=JSON.parse($('#ui-words').textContent),config=window.INANLAR_SETTINGS||{};
  document.documentElement.classList.add('js');
